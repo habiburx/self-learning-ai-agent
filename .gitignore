@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Generated research output
+output/*
+!output/.gitkeep
