@@ -70,10 +70,6 @@ when the model returns a response that matches the report schema.
 - `.env.example` — environment variable template; copy it to `.env` and add
   credentials.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7a51b6a (basic query output agent update fsystem)
 ## Reproducibility
 
 To recreate the environment, follow the setup steps in a fresh virtual
