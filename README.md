@@ -67,17 +67,6 @@ when the model returns a response that matches the report schema.
 - `.env.example` — environment variable template; copy it to `.env` and add
   credentials.
 
-## Troubleshooting
-
-- **Missing or rejected Groq API key:** check that `.env` is in the project
-  directory and that `GROQ_API_KEY` is set to a valid key.
-- **Search or Wikipedia unavailable:** these tools depend on external services
-  and working DNS/network access. When a recognized search or Wikipedia
-  response error occurs, the tool reports the service as unavailable; it cannot
-  provide fresh results while the service or network is down.
-- **Dependency/import errors:** activate the project virtual environment and
-  reinstall dependencies with `python -m pip install -r requirements.txt`.
-
 ## Reproducibility
 
 To recreate the environment, follow the setup steps in a fresh virtual
