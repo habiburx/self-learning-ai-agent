@@ -1,9 +1,10 @@
-# Self-Learning AI Research Agent
+# Self-Learning AI Agent
 
-A command-line search assistant built with LangChain and Groq. It accepts a
+long term goal making a self learning agent using mem0 architecture (https://arxiv.org/pdf/2504.19413)
+A command line search assistant built with LangChain and Groq. It accepts a
 question, can use web search and Wikipedia tools, and formats its final response
 as a structured report with a topic, summary, sources, and the tools used. A
-file-saving tool is also available to the agent.
+file saving tool is also available to the agent.
 
 ## Requirements
 
@@ -50,7 +51,7 @@ current configuration. Do not commit `.env` or share your API key.
 With the virtual environment activated:
 
 ```bash
-python main.py
+python -m src.main
 ```
 
 Enter a research question at the prompt. The agent prints a structured report
@@ -58,20 +59,26 @@ when the model returns a response that matches the report schema.
 
 ## Project files
 
-- `main.py` — configures the Groq model and research agent, prompts for a
+- `src/main.py` — configures the Groq model and research agent, prompts for a
   question, runs the agent, and parses the final report.
-- `tools.py` — defines the DuckDuckGo search, Wikipedia, and text-file saving
-  tools. Each successfully parsed report is appended to
-  `output/research_output.txt`; the `output/` directory is created as needed.
+- `src/tools.py` — defines the DuckDuckGo search, Wikipedia, and text-file saving
+  tools.
+- `output/response.txt` — each successfully parsed report is appended here; the
+  `output/` directory is created as needed.
+- `src/__init__.py` — makes the source directory an importable Python package.
 - `requirements.txt` — Python package dependencies.
 - `.env.example` — environment variable template; copy it to `.env` and add
   credentials.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7a51b6a (basic query output agent update fsystem)
 ## Reproducibility
 
 To recreate the environment, follow the setup steps in a fresh virtual
-environment and run `python main.py`. `requirements.txt` lists dependencies but
-does not pin exact package versions, so installs made at different times can
-resolve to different versions. For identical dependency versions across
+environment and run `python -m src.main`. `requirements.txt` lists dependencies
+but does not pin exact package versions, so installs made at different times
+can resolve to different versions. For identical dependency versions across
 machines, generate and maintain a lock file after validating the environment.
 Model output and web results can also vary between runs.

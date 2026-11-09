@@ -12,7 +12,7 @@ def save_to_txt(data: str, filename: str = "output/response.txt"):
 
     output_path = Path(filename)
     if not output_path.is_absolute():
-        output_path = Path(__file__).resolve().parent / output_path
+        output_path = Path(__file__).resolve().parent.parent / output_path
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("a", encoding="utf-8") as f:
         f.write(formatted_text)

@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
@@ -9,9 +11,9 @@ from langchain_classic.agents import (
     AgentExecutor,
     create_tool_calling_agent,
 )
-from tools import save_to_txt, search_tool, wiki_tool
+from .tools import save_to_txt, search_tool, wiki_tool
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 class Report(BaseModel):
     topic: str
